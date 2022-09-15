@@ -1,17 +1,15 @@
 import Link from "next/link";
+import Icon from "../../components/Icon";
 import navLinks from "../../constants/navlinks";
 
 const Footer = () => {
   return (
-    <nav className="flex justify-between">
-      <>LOGO</>
-      <div>
-        {Object.keys(navLinks).map((i) => (
-          <Link href={navLinks[i]} key={i}>
-            <a>{i}</a>
-          </Link>
-        ))}
+    <nav className="flex justify-between text-2xl p-10">
+      <div className="flex flex-row">
+        <Icon iconName="FaGithub" />
+        <Icon iconName="FaLinkedin" />
       </div>
+      <div>RESUME</div>
     </nav>
   );
 };

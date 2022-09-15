@@ -1,18 +1,21 @@
 import Link from "next/link";
 import navLinks from "../../constants/navlinks";
 
+const NavItem = ({ link }) => {
+  return (
+    <Link href={navLinks[link]} key={link}>
+      <a className="p-5">{link}</a>
+    </Link>
+  );
+};
+
 const Nav = () => {
   return (
-    <nav className="flex justify-between">
-      <>LOGO</>
-      <div>
-        {Object.keys(navLinks).map((i) => (
-          <Link href={navLinks[i]} key={i}>
-            <a>{i}</a>
-          </Link>
-        ))}
-      </div>
-    </nav>
+    <div>
+      {Object.keys(navLinks).map((i) => (
+        <NavItem link={i} key={i} />
+      ))}
+    </div>
   );
 };
 
